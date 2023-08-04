@@ -8,7 +8,7 @@ This is a generative AI boilerplate app for chatting with an Excel file. The app
 - Document is passed into an agent (LangChain's create_csv_agent())
 - Q&A is achieved by querying the agent which analyzes the file and responds conversationally
 
-![Alt text](image.png)
+![Image](image.png)
 
 ### Get an OpenAI API Key
 
