@@ -40,7 +40,7 @@ question = streamlit.text_area("Ask the data a question", "", placeholder="Examp
 
 ###Conversational part
 with streamlit.form("answer_form", clear_on_submit=True):
-    #openai_api_key = streamlit.text_input('OpenAI API Key', type='password', disabled=not question, value=streamlit.secrets['OPENAI_API_KEY'])
+    openai_key = streamlit.text_input('OpenAI API Key', type='password', disabled=not question, value=streamlit.secrets['OPENAI_API_KEY'])
     submitted = streamlit.form_submit_button("SUBMIT")
 
     if submitted and openai_key:
