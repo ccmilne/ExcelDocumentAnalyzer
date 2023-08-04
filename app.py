@@ -17,7 +17,6 @@ streamlit.set_page_config(page_title="Chat with your Excel Document", page_icon=
 streamlit.title('Chat with your Excel Document')
 
 # #Take an input
-# txt_input = streamlit.text_area('Enter your text to summarize', '', height=200)
 user_file = streamlit.file_uploader("Upload file", type={"csv", "excel"}, accept_multiple_files=False)
 
 if user_file is not None:
@@ -48,18 +47,3 @@ with streamlit.form("answer_form", clear_on_submit=True):
             response = agent.run(question)
             if response:
                 streamlit.write(response)
-
-# #Form to accept input
-# result = []
-# with streamlit.form('summarize_form', clear_on_submit=True):
-#     openai_api_key = streamlit.text_input('OpenAI API Key', type='password', disabled=not txt_input, value=streamlit.secrets['OPENAI_API_KEY'])
-#     submitted = streamlit.form_submit_button('SUBMIT')
-
-#     if submitted and openai_api_key.startswith('sk-'):
-#         with streamlit.spinner('Summarizing ...'):
-#             response = generate_response(txt_input)
-#             result.append(response)
-#             del openai_api_key
-
-# if len(result):
-#     streamlit.write(response)
